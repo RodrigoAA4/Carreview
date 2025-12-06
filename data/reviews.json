@@ -1,0 +1,254 @@
+[
+  {
+    "brand": "audi",
+    "model": "RS5",
+    "rating": 3,
+    "ts": 1764688761
+  },
+  {
+    "brand": "audi",
+    "model": "Q5",
+    "rating": 4,
+    "ts": 1764690036
+  },
+  {
+    "brand": "audi",
+    "model": "Q5",
+    "rating": 2,
+    "ts": 1764690039
+  },
+  {
+    "brand": "audi",
+    "model": "A3",
+    "rating": 3,
+    "ts": 1764690041
+  },
+  {
+    "brand": "audi",
+    "model": "RS5",
+    "rating": 4,
+    "ts": 1764690043
+  },
+  {
+    "brand": "audi",
+    "model": "Q5",
+    "rating": 4,
+    "ts": 1764690046
+  },
+  {
+    "brand": "audi",
+    "model": "A3",
+    "rating": 5,
+    "ts": 1764690048
+  },
+  {
+    "brand": "audi",
+    "model": "RS5",
+    "rating": 4,
+    "ts": 1764690050
+  },
+  {
+    "brand": "peugeot",
+    "model": "208",
+    "rating": 4,
+    "ts": 1764692406
+  },
+  {
+    "brand": "peugeot",
+    "model": "208",
+    "rating": 2,
+    "ts": 1764692410
+  },
+  {
+    "brand": "citroen",
+    "model": "DS4",
+    "rating": 2,
+    "ts": 1764692876
+  },
+  {
+    "brand": "citroen",
+    "model": "Picasso",
+    "rating": 2,
+    "ts": 1764692879
+  },
+  {
+    "brand": "jaguar",
+    "model": "F-Pace",
+    "rating": 4,
+    "ts": 1764692887
+  },
+  {
+    "brand": "ford",
+    "model": "Ranger",
+    "rating": 4,
+    "ts": 1764693223
+  },
+  {
+    "brand": "ford",
+    "model": "Mustang",
+    "rating": 3,
+    "ts": 1764693226
+  },
+  {
+    "brand": "ford",
+    "model": "Mustang",
+    "rating": 5,
+    "ts": 1764693228
+  },
+  {
+    "brand": "ford",
+    "model": "Mustang",
+    "rating": 3,
+    "ts": 1764693230
+  },
+  {
+    "brand": "porsche",
+    "model": "911",
+    "rating": 5,
+    "ts": 1764694153
+  },
+  {
+    "brand": "porsche",
+    "model": "911",
+    "rating": 3,
+    "ts": 1764694155
+  },
+  {
+    "brand": "porsche",
+    "model": "911",
+    "rating": 4,
+    "ts": 1764694156
+  },
+  {
+    "brand": "porsche",
+    "model": "911",
+    "rating": 5,
+    "ts": 1764694158
+  },
+  {
+    "brand": "porsche",
+    "model": "911",
+    "rating": 4,
+    "ts": 1764694159
+  },
+  {
+    "brand": "porsche",
+    "model": "911",
+    "rating": 2,
+    "ts": 1764694160
+  },
+  {
+    "brand": "porsche",
+    "model": "911",
+    "rating": 5,
+    "ts": 1764694162
+  },
+  {
+    "brand": "porsche",
+    "model": "911",
+    "rating": 4,
+    "ts": 1764694235
+  },
+  {
+    "brand": "porsche",
+    "model": "911",
+    "rating": 5,
+    "ts": 1764694236
+  },
+  {
+    "brand": "audi",
+    "model": "A3",
+    "rating": 5,
+    "ts": 1764694256
+  },
+  {
+    "brand": "audi",
+    "model": "A3",
+    "rating": 3,
+    "ts": 1764694261
+  },
+  {
+    "brand": "audi",
+    "model": "A3",
+    "rating": 4,
+    "ts": 1764694266
+  },
+  {
+    "brand": "audi",
+    "model": "A3",
+    "rating": 5,
+    "ts": 1764694270
+  },
+  {
+    "brand": "honda",
+    "model": "Fit",
+    "rating": 3,
+    "ts": 1764694345
+  },
+  {
+    "brand": "honda",
+    "model": "Fit",
+    "rating": 2,
+    "ts": 1764694348
+  },
+  {
+    "brand": "honda",
+    "model": "Fit",
+    "rating": 5,
+    "ts": 1764694353
+  },
+  {
+    "brand": "honda",
+    "model": "HR-V",
+    "rating": 3,
+    "ts": 1764694357
+  },
+  {
+    "brand": "honda",
+    "model": "HR-V",
+    "rating": 5,
+    "ts": 1764694358
+  },
+  {
+    "brand": "honda",
+    "model": "Civic",
+    "rating": 5,
+    "ts": 1764694364
+  },
+  {
+    "brand": "honda",
+    "model": "Civic",
+    "rating": 4,
+    "ts": 1764694367
+  },
+  {
+    "brand": "land_rover",
+    "model": "Discovery",
+    "rating": 3,
+    "ts": 1764694377
+  },
+  {
+    "brand": "fiat",
+    "model": "Cronos",
+    "rating": 2,
+    "ts": 1764956116
+  },
+  {
+    "brand": "porsche",
+    "model": "911",
+    "rating": 4,
+    "ts": 1764956130
+  },
+  {
+    "brand": "hyundai",
+    "model": "Tucson",
+    "rating": 3,
+    "ts": 1764961353
+  },
+  {
+    "brand": "bmw",
+    "model": "320i",
+    "rating": 4,
+    "ts": 1764961374
+  }
+]

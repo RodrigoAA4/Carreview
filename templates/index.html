@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CarReview</title>
+
+  <!-- Fonte -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS -->
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}"
+  />
+
+  <!-- SweetAlert (avisos bonitos de login / erro de auth) -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
+  <!-- Firebase / Auth / Chat -->
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='chat.js') }}"></script>
+</head>
+
+<body>
+  <!-- =============== HEADER FIXO / GLASS =============== -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="brand-block">
+        <div class="logo-row">
+          <span class="logo-icon">🚗</span>
+          <h1 class="logo-text">CarReview</h1>
+        </div>
+        <p class="logo-sub">
+          Avaliações reais • Chat em tempo real • Comunidade automotiva
+        </p>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <!-- Info usuário preenchida pelo auth.js -->
+      <div class="user-info-block">
+        <div class="user-meta">
+          <span id="user-info" class="user-name">Visitante</span>
+          <small class="user-role">Convidado</small>
+        </div>
+        <!-- avatar fake / depois pode trocar pela foto -->
+        <div class="user-avatar" id="user-avatar">
+          <span>👤</span>
+        </div>
+      </div>
+
+      <!-- botão modo escuro -->
+      <button
+        id="theme-toggle"
+        class="icon-button theme-toggle"
+        aria-label="Alternar tema claro/escuro"
+        type="button"
+      >
+        🌙
+      </button>
+
+      <!-- botão menu hambúrguer -->
+      <button
+        class="icon-button menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
+
+      <!-- dropdown -->
+      <div id="menu" class="dropdown-menu">
+        <button id="login-button" class="dropdown-action">
+          Entrar com Google
+        </button>
+        <button
+          id="logout-button"
+          class="dropdown-action danger"
+          style="display:none;"
+        >
+          Sair
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =============== CONTEÚDO PRINCIPAL =============== -->
+  <main class="page-wrapper">
+    <!-- BLOCO DE STATUS / “DASHBOARD CARDS” -->
+    <section class="stats-section">
+      <div class="stat-card">
+        <div class="stat-icon">⭐</div>
+        <div class="stat-info">
+          <div class="stat-value">4.7</div>
+          <div class="stat-label">Nota média geral</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">💬</div>
+        <div class="stat-info">
+          <div class="stat-value" id="active-chat-count">+120</div>
+          <div class="stat-label">Mensagens hoje</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon">🔥</div>
+        <div class="stat-info">
+          <div class="stat-value">Mustang</div>
+          <div class="stat-label">Mais comentado agora</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BARRA DE BUSCA -->
+    <section class="search-area">
+      <div class="search-box">
+        <span class="search-icon">🔎</span>
+        <input
+          type="text"
+          id="search-input"
+          class="search-input"
+          placeholder="Buscar marca... (ex: BMW, Toyota, Porsche)"
+          onkeyup="filterBrands()"
+          aria-label="Pesquisar marca de carro"
+        />
+      </div>
+    </section>
+
+    <!-- GRID DE MARCAS -->
+    <section class="brands-grid">
+
+      <!-- AUDI -->
+      <a href="/marca/audi" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/audi.png') }}" alt="Audi">
+        </div>
+        <div class="brand-name">AUDI</div>
+        <div class="brand-badge">premium</div>
+      </a>
+
+      <!-- BMW -->
+      <a href="/marca/bmw" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/bmw.png') }}" alt="BMW">
+        </div>
+        <div class="brand-name">BMW</div>
+        <div class="brand-badge">sport</div>
+      </a>
+
+      <!-- CHEVROLET -->
+      <a href="/marca/chevrolet" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/chevrolet.png') }}" alt="Chevrolet">
+        </div>
+        <div class="brand-name">CHEVROLET</div>
+        <div class="brand-badge">popular</div>
+      </a>
+
+      <!-- FIAT -->
+      <a href="/marca/fiat" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/fiat.png') }}" alt="Fiat">
+        </div>
+        <div class="brand-name">FIAT</div>
+        <div class="brand-badge">cidade</div>
+      </a>
+
+      <!-- FORD -->
+      <a href="/marca/ford" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/ford.png') }}" alt="Ford">
+        </div>
+        <div class="brand-name">FORD</div>
+        <div class="brand-badge">pickup</div>
+      </a>
+
+      <!-- HONDA -->
+      <a href="/marca/honda" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/honda.png') }}" alt="Honda">
+        </div>
+        <div class="brand-name">HONDA</div>
+        <div class="brand-badge">confiável</div>
+      </a>
+
+      <!-- HYUNDAI -->
+      <a href="/marca/hyundai" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/hyundai.png') }}" alt="Hyundai">
+        </div>
+        <div class="brand-name">HYUNDAI</div>
+        <div class="brand-badge">custo-benefício</div>
+      </a>
+
+      <!-- JEEP -->
+      <a href="/marca/jeep" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/jeep.png') }}" alt="Jeep">
+        </div>
+        <div class="brand-name">JEEP</div>
+        <div class="brand-badge">off-road</div>
+      </a>
+
+      <!-- LAND ROVER -->
+      <a href="/marca/land-rover" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/land_rover.png') }}" alt="Land Rover">
+        </div>
+        <div class="brand-name">LAND ROVER</div>
+        <div class="brand-badge">luxo 4x4</div>
+      </a>
+
+      <!-- MERCEDES-BENZ -->
+      <a href="/marca/mercedes-benz" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/mercedes_benz.png') }}" alt="Mercedes-Benz">
+        </div>
+        <div class="brand-name">MERCEDES BENZ</div>
+        <div class="brand-badge">executivo</div>
+      </a>
+
+      <!-- NISSAN -->
+      <a href="/marca/nissan" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/nissan.png') }}" alt="Nissan">
+        </div>
+        <div class="brand-name">NISSAN</div>
+        <div class="brand-badge">tech</div>
+      </a>
+
+      <!-- PORSCHE -->
+      <a href="/marca/porsche" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/porsche.png') }}" alt="Porsche">
+        </div>
+        <div class="brand-name">PORSCHE</div>
+        <div class="brand-badge">supercar</div>
+      </a>
+
+      <!-- TOYOTA -->
+      <a href="/marca/toyota" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/toyota.png') }}" alt="Toyota">
+        </div>
+        <div class="brand-name">TOYOTA</div>
+        <div class="brand-badge">durável</div>
+      </a>
+
+      <!-- VOLKSWAGEN -->
+      <a href="/marca/volkswagen" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/volkswagen.png') }}" alt="Volkswagen">
+        </div>
+        <div class="brand-name">VOLKSWAGEN</div>
+        <div class="brand-badge">alemã</div>
+      </a>
+
+      <!-- ================= NOVAS 4 MARCAS ================= -->
+
+      <!-- MITSUBISHI -->
+      <a href="/marca/mitsubishi" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/mitsubishi.png') }}" alt="Mitsubishi">
+        </div>
+        <div class="brand-name">MITSUBISHI</div>
+        <div class="brand-badge">4x4 japonês</div>
+      </a>
+
+      <!-- CITROËN -->
+      <a href="/marca/citroen" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/citroen.png') }}" alt="Citroën">
+        </div>
+        <div class="brand-name">CITROËN</div>
+        <div class="brand-badge">design francês</div>
+      </a>
+
+      <!-- PEUGEOT -->
+      <a href="/marca/peugeot" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/peugeot.png') }}" alt="Peugeot">
+        </div>
+        <div class="brand-name">PEUGEOT</div>
+        <div class="brand-badge">francesa</div>
+      </a>
+
+      <!-- JAGUAR -->
+      <a href="/marca/jaguar" class="brand-card">
+        <div class="brand-icon">
+          <img src="{{ url_for('static', filename='images/logos/jaguar.png') }}" alt="Jaguar">
+        </div>
+        <div class="brand-name">JAGUAR</div>
+        <div class="brand-badge">luxo esportivo</div>
+      </a>
+
+    </section>
+  </main>
+
+  <!-- =============== CHAT FLUTUANTE =============== -->
+  <button
+    id="chat-fab"
+    class="chat-fab"
+    onclick="toggleChat()"
+    aria-label="Abrir chat"
+  >
+    💬
+    <span class="chat-fab-badge">beta</span>
+  </button>
+
+  <div id="chat-box" class="chat-box" style="display:none;">
+    <div id="chat-header" class="chat-header">
+      <div class="chat-header-left">
+        <strong>Chat da Comunidade</strong>
+        <span class="chat-room-hint">Escolha a marca &gt; modelo &gt; conversar</span>
+      </div>
+
+      <button
+        class="chat-close-btn"
+        onclick="toggleChat()"
+        aria-label="Fechar chat"
+      >
+        ✖
+      </button>
+    </div>
+
+    <div id="chat-content" class="chat-content">
+      <!-- passo 1: marcas -->
+      <div id="chat-marcas" class="chat-marcas"></div>
+
+      <!-- passo 2: modelos da marca -->
+      <div id="chat-modelos" class="chat-modelos" style="display:none;">
+        <button onclick="voltarMarcas()" class="back-btn">⬅ Voltar</button>
+        <div id="modelos-lista"></div>
+      </div>
+    </div>
+
+    <div id="chat-input-area" class="chat-input-area">
+      <input
+        id="chat-input"
+        type="text"
+        placeholder="Escreva sua mensagem..."
+      />
+      <button id="send-btn">Enviar</button>
+    </div>
+  </div>
+
+  <!-- =============== FOOTER =============== -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div>CarReview • Projeto acadêmico • v2.0</div>
+      <div class="footer-right">
+        <span>🔥 Em desenvolvimento</span>
+        <span>•</span>
+        <span>by nossa equipe</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =============== SCRIPTS DA PÁGINA =============== -->
+  <script>
+    // -------------------------------
+    // MENU DROPDOWN LOGIN / LOGOUT
+    // -------------------------------
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("open");
+    }
+
+    // Fecha menu ao clicar fora
+    document.addEventListener("click", (e) => {
+      const menu = document.getElementById("menu");
+      const toggleBtn = e.target.closest(".menu-toggle");
+      const insideMenu = e.target.closest("#menu");
+      if (!toggleBtn && !insideMenu) {
+        menu.classList.remove("open");
+      }
+    });
+
+    // -------------------------------
+    // DARK MODE (usa <html data-theme="...">)
+    // -------------------------------
+    const rootEl = document.documentElement;
+    const themeBtn = document.getElementById("theme-toggle");
+
+    function applyTheme(theme) {
+      rootEl.setAttribute("data-theme", theme);
+      if (themeBtn) {
+        themeBtn.textContent = theme === "dark" ? "☀️" : "🌙";
+      }
+    }
+
+    function loadTheme() {
+      const saved = localStorage.getItem("theme") || "light";
+      applyTheme(saved);
+    }
+
+    function toggleTheme() {
+      const current = rootEl.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", next);
+      applyTheme(next);
+    }
+
+    loadTheme();
+    themeBtn.addEventListener("click", toggleTheme);
+
+    // -------------------------------
+    // FILTRAR MARCAS NA GRID
+    // -------------------------------
+    function filterBrands() {
+      const value = document
+        .getElementById("search-input")
+        .value.toLowerCase()
+        .trim();
+
+      const cards = document.querySelectorAll(".brand-card");
+
+      cards.forEach((card) => {
+        const name = card
+          .querySelector(".brand-name")
+          .textContent.toLowerCase();
+
+        card.style.display = name.includes(value) ? "flex" : "none";
+      });
+    }
+
+    // -------------------------------
+    // CHAT LÓGICA VISUAL (marcas → modelos)
+    // -------------------------------
+    const marcas = {
+      "Audi": ["A3", "Q5", "RS5"],
+      "BMW": ["320i", "X1", "X6"],
+      "Chevrolet": ["Onix", "Tracker", "S10"],
+      "Fiat": ["Argo", "Cronos", "Toro"],
+      "Ford": ["Ka", "Ranger", "Mustang"],
+      "Honda": ["Civic", "HR-V", "Fit"],
+      "Hyundai": ["HB20", "Creta", "Tucson"],
+      "Jeep": ["Renegade", "Compass", "Wrangler"],
+      "Land Rover": ["Evoque", "Discovery", "Defender"],
+      "Mercedes Benz": ["Classe A", "GLA", "GLE"],
+      "Nissan": ["Kicks", "Sentra", "Frontier"],
+      "Porsche": ["Macan", "Cayenne", "911"],
+      "Toyota": ["Corolla", "Corolla Cross", "Hilux"],
+      "Volkswagen": ["Polo", "T-Cross", "Amarok"],
+      "Mitsubishi": ["Lancer", "Outlander", "Pajero"],
+      "Citroën": ["C3", "C4 Cactus", "C5 Aircross"],
+      "Peugeot": ["208", "2008", "3008"],
+      "Jaguar": ["XE", "F-Pace", "F-Type"]
+    };
+
+    function preencherMarcas() {
+      const cont = document.getElementById("chat-marcas");
+      cont.innerHTML = "";
+      Object.keys(marcas).forEach((marca) => {
+        const btn = document.createElement("button");
+        btn.className = "chat-brand-btn";
+        btn.textContent = marca;
+        btn.onclick = () => mostrarModelos(marca);
+        cont.appendChild(btn);
+      });
+    }
+
+    function mostrarModelos(marca) {
+      const modelosDiv = document.getElementById("modelos-lista");
+      const modelos = marcas[marca];
+      modelosDiv.innerHTML = "";
+
+      document.getElementById("chat-marcas").style.display = "none";
+      document.getElementById("chat-modelos").style.display = "flex";
+
+      modelos.forEach((m) => {
+        const btn = document.createElement("button");
+        btn.className = "chat-model-btn";
+        btn.textContent = m;
+        modelosDiv.appendChild(btn);
+      });
+    }
+
+    function voltarMarcas() {
+      document.getElementById("chat-modelos").style.display = "none";
+      document.getElementById("chat-marcas").style.display = "flex";
+    }
+
+    function toggleChat() {
+      const box = document.getElementById("chat-box");
+      const isOpen = box.style.display === "block";
+
+      if (!isOpen) {
+        box.style.display = "block";
+        box.classList.add("expanded");
+        // reset conteúdo
+        document.getElementById("chat-content").innerHTML = `
+          <div id="chat-marcas" class="chat-marcas"></div>
+          <div id="chat-modelos" class="chat-modelos" style="display:none;">
+            <button onclick="voltarMarcas()" class="back-btn">⬅ Voltar</button>
+            <div id="modelos-lista"></div>
+          </div>
+        `;
+        preencherMarcas();
+      } else {
+        box.style.display = "none";
+        box.classList.remove("expanded");
+      }
+    }
+  </script>
+</body>
+</html>

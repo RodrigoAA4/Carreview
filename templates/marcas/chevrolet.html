@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chevrolet Onix Plus, Tracker e S10</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Chevrolet Onix Plus -->
+<div class="car-card">
+  <img src="/static/images/chevrolet/onix_plus_2025.jpg" alt="Chevrolet Onix Plus 2025" class="car-img">
+
+  <div class="rating-container" data-modelo="onix_plus">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Chevrolet Onix Plus 1.0 Flex LT Manual 2025</h2>
+  <p class="car-description">
+    O Chevrolet Onix Plus 2025 é um sedã compacto que se destaca pelo ótimo custo-benefício, baixo consumo de combustível e conectividade...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2025</td></tr>
+    <tr><th>Cor</th><td>Preto Midnight</td></tr>
+    <tr><th>Motor</th><td>1.0 aspirado, 3 cilindros</td></tr>
+    <tr><th>Potência</th><td>82 cv (etanol) / 78 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>10,6 kgfm (etanol) / 9,5 kgfm (gasolina)</td></tr>
+    <tr><th>Transmissão</th><td>Manual de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 84.964 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Chevrolet Tracker -->
+<div class="car-card">
+  <img src="/static/images/chevrolet/chevrolet_tracker_2023.jpg" alt="Chevrolet Tracker 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="tracker">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Chevrolet Tracker Premier 1.2 Turbo 2023</h2>
+  <p class="car-description">
+    O Chevrolet Tracker Premier 2023 é um SUV compacto completo, oferecendo bom desempenho, conectividade e segurança...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Azul Eclipse</td></tr>
+    <tr><th>Motor</th><td>1.2 Turbo, 3 cilindros</td></tr>
+    <tr><th>Potência</th><td>133 cv (etanol) / 132 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>21,4 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 117.892 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Chevrolet S10 -->
+<div class="car-card">
+  <img src="/static/images/chevrolet/chevrolet_s10_2017.jpg" alt="Chevrolet S10 2017" class="car-img">
+
+  <div class="rating-container" data-modelo="s10">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Chevrolet S10 LTZ 2.8 Turbo Diesel 4x4 AT 2017</h2>
+  <p class="car-description">
+    A Chevrolet S10 2017 é uma picape média voltada tanto para o trabalho quanto para o lazer, trazendo robustez e bom desempenho...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2017</td></tr>
+    <tr><th>Cor</th><td>Branco</td></tr>
+    <tr><th>Motor</th><td>2.8 Turbo Diesel, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>200 cv</td></tr>
+    <tr><th>Torque</th><td>51 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>4x4</td></tr>
+    <tr><th>Combustível</th><td>Diesel</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 149.127 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

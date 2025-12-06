@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br"> 
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Audi</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Audi A3 -->
+<div class="car-card">
+  <img src="/static/images/audi/audi_A3_2019.png" alt="Audi A3 2019" class="car-img">
+  
+  <div class="rating-container" data-modelo="audi_a3">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Audi A3 Sedan Performance 2.0 TFSI 2019</h2>
+  <p class="car-description">Com design moderno, acabamento premium e um desempenho impressionante...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2019</td></tr>
+    <tr><th>Cor</th><td>Branco</td></tr>
+    <tr><th>Motor</th><td>2.0 TFSI, 4 cilindros em linha</td></tr>
+    <tr><th>Potência</th><td>220 cv @ 4.500 rpm</td></tr>
+    <tr><th>Torque</th><td>35,7 kgfm @ 1.600 rpm</td></tr>
+    <tr><th>Transmissão</th><td>Automatizada de dupla embreagem S-Tronic de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 145.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Audi Q5 -->
+<div class="car-card">
+  <img src="/static/images/audi/audi_Q5_2021.png" alt="Audi Q5 2021" class="car-img">
+  
+  <div class="rating-container" data-modelo="audi_q5">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Audi Q5 Prestige Plus 2.0 TFSI Quattro 2021</h2>
+  <p class="car-description">O Audi Q5 2021 é um SUV médio de luxo que oferece alto nível de conforto...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2021</td></tr>
+    <tr><th>Cor</th><td>Azul Mythos</td></tr>
+    <tr><th>Motor</th><td>2.0 TFSI, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>252 cv</td></tr>
+    <tr><th>Torque</th><td>37,7 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automatizada de dupla embreagem S-Tronic de 7 marchas</td></tr>
+    <tr><th>Tração</th><td>Integral (Quattro)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 289.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Audi RS5 -->
+<div class="car-card">
+  <img src="/static/images/audi/audi_RS5_2022.png" alt="Audi RS5 2022" class="car-img">
+  
+  <div class="rating-container" data-modelo="audi_rs5">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Audi RS5 Sportback 2.9 V6 TFSI Quattro 2022</h2>
+  <p class="car-description">O Audi RS5 Sportback 2022 é um esportivo de luxo com desempenho de supercarro...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2022</td></tr>
+    <tr><th>Cor</th><td>Verde Sonoma</td></tr>
+    <tr><th>Motor</th><td>2.9 V6 Biturbo TFSI</td></tr>
+    <tr><th>Potência</th><td>450 cv</td></tr>
+    <tr><th>Torque</th><td>61,2 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática Tiptronic de 8 marchas</td></tr>
+    <tr><th>Tração</th><td>Integral (Quattro)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 589.990 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

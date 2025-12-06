@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Porsche Macan, Cayenne e 911 Carrera</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Porsche Macan -->
+<div class="car-card">
+  <img src="/static/images/porsche/porsche_macan_2024.png" alt="Porsche Macan 2024" class="car-img">
+
+  <div class="rating-container" data-modelo="porsche_macan">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Porsche Macan 2.0 Turbo 2024</h2>
+  <p class="car-description">O Porsche Macan 2024 é um SUV compacto esportivo que entrega desempenho e luxo...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2024</td></tr>
+    <tr><th>Cor</th><td>Cinza Star</td></tr>
+    <tr><th>Motor</th><td>2.0 Turbo, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>265 cv</td></tr>
+    <tr><th>Torque</th><td>40,8 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de dupla embreagem PDK 7 marchas</td></tr>
+    <tr><th>Tração</th><td>Integral (AWD)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 485.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Porsche Cayenne -->
+<div class="car-card">
+  <img src="/static/images/porsche/porsche_cayenne_2023.jpg" alt="Porsche Cayenne 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="porsche_cayenne">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Porsche Cayenne 3.0 V6 Turbo 2023</h2>
+  <p class="car-description">O Porsche Cayenne 2023 é um SUV de luxo esportivo, equipado com motor 3.0 V6 turbo...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Branco Carrara</td></tr>
+    <tr><th>Motor</th><td>3.0 V6 Turbo</td></tr>
+    <tr><th>Potência</th><td>340 cv</td></tr>
+    <tr><th>Torque</th><td>45,8 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática Tiptronic S de 8 marchas</td></tr>
+    <tr><th>Tração</th><td>Integral (AWD)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 635.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Porsche 911 Carrera -->
+<div class="car-card">
+  <img src="/static/images/porsche/porsche_911_carrera_2023.jpg" alt="Porsche 911 Carrera 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="porsche_911_carrera">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Porsche 911 Carrera 3.0 2023</h2>
+  <p class="car-description">O Porsche 911 Carrera 2023 é um dos esportivos mais emblemáticos do mundo...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Vermelho Carmine</td></tr>
+    <tr><th>Motor</th><td>3.0 Boxer Biturbo, 6 cilindros</td></tr>
+    <tr><th>Potência</th><td>385 cv</td></tr>
+    <tr><th>Torque</th><td>45,9 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de dupla embreagem PDK 8 marchas</td></tr>
+    <tr><th>Tração</th><td>Traseira (RWD)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>2</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 795.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

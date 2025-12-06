@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Honda Civic, HR-V e Fit</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Honda Civic 2015 -->
+<div class="car-card">
+  <img src="/static/images/honda/honda_civic_2015.jpg" alt="Honda Civic 2015" class="car-img">
+
+  <div class="rating-container" data-modelo="honda_civic">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Honda Civic LXR 2.0 16V FlexOne 2015</h2>
+  <p class="car-description">
+    O Honda Civic LXR 2015 combina conforto, confiabilidade e desempenho...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2015</td></tr>
+    <tr><th>Cor</th><td>Prata Global</td></tr>
+    <tr><th>Motor</th><td>2.0 i-VTEC FlexOne, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>155 cv (etanol) / 150 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>19,5 kgfm (etanol) / 19,3 kgfm (gasolina)</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 5 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 72.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Honda HR-V 2023 -->
+<div class="car-card">
+  <img src="/static/images/honda/honda_hrv_2023.jpg" alt="Honda HR-V 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="honda_hrv">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Honda HR-V EXL 1.5 Flex CVT 2023</h2>
+  <p class="car-description">
+    O Honda HR-V EXL 2023 é um SUV compacto que combina estilo, espaço interno e eficiência...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Cinza Basalto</td></tr>
+    <tr><th>Motor</th><td>1.5 i-VTEC aspirado, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>126 cv (etanol e gasolina)</td></tr>
+    <tr><th>Torque</th><td>15,8 kgfm (etanol) / 15,5 kgfm (gasolina)</td></tr>
+    <tr><th>Transmissão</th><td>Automática CVT</td></tr>
+    <tr><th>Tração</th><td>Dianteira</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 160.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Honda Fit 2022 -->
+<div class="car-card">
+  <img src="/static/images/honda/honda_fit_2022.jpg" alt="Honda Fit 2022" class="car-img">
+
+  <div class="rating-container" data-modelo="honda_fit">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Honda Fit EXL 1.5 FlexOne CVT 2022</h2>
+  <p class="car-description">
+    O Honda Fit EXL 2022 é um hatch compacto versátil e confiável...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2022</td></tr>
+    <tr><th>Cor</th><td>Azul Platinum</td></tr>
+    <tr><th>Motor</th><td>1.5 i-VTEC FlexOne, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>116 cv (etanol) / 115 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>15,3 kgfm (etanol) / 15,2 kgfm (gasolina)</td></tr>
+    <tr><th>Transmissão</th><td>Automática CVT</td></tr>
+    <tr><th>Tração</th><td>Dianteira</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 105.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

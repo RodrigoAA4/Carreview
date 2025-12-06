@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nissan Kicks, Sentra e Frontier</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Nissan Kicks -->
+<div class="car-card">
+  <img src="/static/images/nissan/nissan_kicks_2024.png" alt="Nissan Kicks 2024" class="car-img">
+
+  <div class="rating-container" data-modelo="nissan_kicks">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Nissan Kicks Advance 1.6 CVT 2024</h2>
+  <p class="car-description">O Nissan Kicks Advance 2024 é um SUV compacto que se destaca pelo visual moderno...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2024</td></tr>
+    <tr><th>Cor</th><td>Branco Diamond</td></tr>
+    <tr><th>Motor</th><td>1.6 aspirado, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>113 cv (etanol) / 110 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>15,3 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática CVT</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 124.990 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Nissan Sentra -->
+<div class="car-card">
+  <img src="/static/images/nissan/nissan_sentra_2023.jpg" alt="Nissan Sentra 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="nissan_sentra">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Nissan Sentra Exclusive 2.0 CVT 2023</h2>
+  <p class="car-description">O Nissan Sentra 2023 chega com design arrojado e conjunto mecânico eficiente...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Branco Classic</td></tr>
+    <tr><th>Motor</th><td>2.0 aspirado, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>151 cv</td></tr>
+    <tr><th>Torque</th><td>20 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática CVT</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 153.290 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Nissan Frontier -->
+<div class="car-card">
+  <img src="/static/images/nissan/nissan_frontier_2022.jpg" alt="Nissan Frontier 2022" class="car-img">
+
+  <div class="rating-container" data-modelo="nissan_frontier">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Nissan Frontier XE 2.3 Bi-Turbo Diesel 4x4 AT 2022</h2>
+  <p class="car-description">A Nissan Frontier XE 2022 é uma picape média robusta, com motor 2.3 bi-turbo diesel...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2022</td></tr>
+    <tr><th>Cor</th><td>Cinza Grafite</td></tr>
+    <tr><th>Motor</th><td>2.3 Bi-Turbo Diesel, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>190 cv</td></tr>
+    <tr><th>Torque</th><td>45,9 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 7 marchas</td></tr>
+    <tr><th>Tração</th><td>4x4</td></tr>
+    <tr><th>Combustível</th><td>Diesel</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 232.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

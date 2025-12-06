@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jeep Renegade, Compass e Wrangler</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Jeep Renegade -->
+<div class="car-card">
+  <img src="/static/images/jeep/jeep_renegade_2022.jpg" alt="Jeep Renegade 2022" class="car-img">
+
+  <div class="rating-container" data-modelo="jeep_renegade">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Jeep Renegade 1.3 Turbo Flex 4x2 AT6 2022</h2>
+  <p class="car-description">
+    O Jeep Renegade 2022 é um SUV compacto robusto e confiável...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2022</td></tr>
+    <tr><th>Cor</th><td>Azul Carbon</td></tr>
+    <tr><th>Motor</th><td>1.3 Turbo Flex T270</td></tr>
+    <tr><th>Potência</th><td>185 cv (etanol) / 180 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>27,5 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira (4x2)</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 135.990 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Jeep Compass -->
+<div class="car-card">
+  <img src="/static/images/jeep/jeep_compass_2023.jpg" alt="Jeep Compass 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="jeep_compass">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Jeep Compass 1.3 Turbo Flex 4x2 AT6 2023</h2>
+  <p class="car-description">
+    O Jeep Compass 2023 é um SUV médio que combina motor 1.3 turbo de 185 cv...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Branco Polar</td></tr>
+    <tr><th>Motor</th><td>1.3 Turbo Flex T270</td></tr>
+    <tr><th>Potência</th><td>185 cv (etanol) / 180 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>27,5 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira (4x2)</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 174.790 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Jeep Wrangler -->
+<div class="car-card">
+  <img src="/static/images/jeep/jeep_wrangler_2022.jpg" alt="Jeep Wrangler 2022" class="car-img">
+
+  <div class="rating-container" data-modelo="jeep_wrangler">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Jeep Wrangler Rubicon 2.0 Turbo 4x4 AT8 2022</h2>
+  <p class="car-description">
+    O Jeep Wrangler Rubicon 2022 é o ícone off-road da marca, equipado com motor 2.0 turbo...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2022</td></tr>
+    <tr><th>Cor</th><td>Branco Sarge</td></tr>
+    <tr><th>Motor</th><td>2.0 Turbo a gasolina</td></tr>
+    <tr><th>Potência</th><td>272 cv</td></tr>
+    <tr><th>Torque</th><td>40,8 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 8 marchas</td></tr>
+    <tr><th>Tração</th><td>4x4</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>2</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 434.900 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

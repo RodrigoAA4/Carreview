@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mercedes Classe A, GLA e GLE</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Mercedes-Benz Classe A Sedan -->
+<div class="car-card">
+  <img src="/static/images/mercedes-benz/mercedes_classe_a_sedan_2023.jpg" alt="Mercedes Classe A Sedan 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="mercedes_classe_a">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Mercedes-Benz Classe A Sedan A200 Progressive 1.3 Turbo 2023</h2>
+  <p class="car-description">
+    O Mercedes-Benz Classe A Sedan 2023 combina sofisticação, tecnologia e desempenho...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Preto Iridium</td></tr>
+    <tr><th>Motor</th><td>1.3 Turbo, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>163 cv</td></tr>
+    <tr><th>Torque</th><td>25,5 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de dupla embreagem 7G-DCT</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 264.900 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Mercedes-Benz GLA 200 AMG Line -->
+<div class="car-card">
+  <img src="/static/images/mercedes-benz/mercedes_gla_200_2023.png" alt="Mercedes GLA 200 AMG Line 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="mercedes_gla">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Mercedes-Benz GLA 200 AMG Line 1.3 Turbo 2023</h2>
+  <p class="car-description">
+    O Mercedes-Benz GLA 200 AMG Line 2023 é um SUV compacto premium que alia visual esportivo...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Branco Polar</td></tr>
+    <tr><th>Motor</th><td>1.3 Turbo, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>163 cv</td></tr>
+    <tr><th>Torque</th><td>25,5 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de dupla embreagem 7G-DCT</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 289.900 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Mercedes-Benz GLE 400d -->
+<div class="car-card">
+  <img src="/static/images/mercedes-benz/mercedes_gle_400d_2022.jpg" alt="Mercedes GLE 400d 2022" class="car-img">
+
+  <div class="rating-container" data-modelo="mercedes_gle">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Mercedes-Benz GLE 400d 4MATIC 3.0 Diesel 2022</h2>
+  <p class="car-description">
+    O Mercedes-Benz GLE 400d 2022 é um SUV de luxo de grande porte, equipado com motor 3.0 diesel...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2022</td></tr>
+    <tr><th>Cor</th><td>Azul Obsidian</td></tr>
+    <tr><th>Motor</th><td>3.0 Diesel, 6 cilindros em linha</td></tr>
+    <tr><th>Potência</th><td>330 cv</td></tr>
+    <tr><th>Torque</th><td>71,4 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática 9G-TRONIC</td></tr>
+    <tr><th>Tração</th><td>Integral (4MATIC)</td></tr>
+    <tr><th>Combustível</th><td>Diesel</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 599.900 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

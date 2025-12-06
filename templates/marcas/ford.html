@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ford Ka, Ranger e Mustang</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Ford Ka -->
+<div class="car-card">
+  <img src="/static/images/ford/ford_ka_2018.jpg" alt="Ford Ka 2021" class="car-img">
+
+  <div class="rating-container" data-modelo="ford_ka">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Ford Ka 1.0 SE Plus 2021</h2>
+  <p class="car-description">
+    O Ford Ka 1.0 SE Plus 2021 é um hatch compacto que entrega bom espaço interno, baixo consumo de combustível e conectividade...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2021</td></tr>
+    <tr><th>Cor</th><td>Prata Dublin</td></tr>
+    <tr><th>Motor</th><td>1.0 TiVCT, 3 cilindros</td></tr>
+    <tr><th>Potência</th><td>85 cv (etanol) / 80 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>10,7 kgfm (etanol) / 10,2 kgfm (gasolina)</td></tr>
+    <tr><th>Transmissão</th><td>Manual de 5 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 59.900 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Ford Ranger -->
+<div class="car-card">
+  <img src="/static/images/ford/ford_ranger_2022.jpg" alt="Ford Ranger 2022" class="car-img">
+
+  <div class="rating-container" data-modelo="ford_ranger">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Ford Ranger XLS 2.2 Diesel 4x4 AT 2022</h2>
+  <p class="car-description">
+    A Ford Ranger XLS 2.2 Diesel 4x4 AT 2022 é uma picape média voltada para o trabalho e lazer...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2022</td></tr>
+    <tr><th>Cor</th><td>Prata Ártico</td></tr>
+    <tr><th>Motor</th><td>2.2 Turbo Diesel, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>160 cv</td></tr>
+    <tr><th>Torque</th><td>39,3 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>4x4</td></tr>
+    <tr><th>Combustível</th><td>Diesel</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 206.290 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Ford Mustang -->
+<div class="car-card">
+  <img src="/static/images/ford/ford_mustang_2020.jpg" alt="Ford Mustang 2020" class="car-img">
+
+  <div class="rating-container" data-modelo="ford_mustang">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Ford Mustang GT Premium 5.0 V8 2020</h2>
+  <p class="car-description">
+    O Ford Mustang GT Premium 2020 é um esportivo icônico, equipado com motor 5.0 V8 aspirado de 466 cv...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2020</td></tr>
+    <tr><th>Cor</th><td>Vermelho Arizona</td></tr>
+    <tr><th>Motor</th><td>5.0 V8 aspirado</td></tr>
+    <tr><th>Potência</th><td>466 cv</td></tr>
+    <tr><th>Torque</th><td>56,7 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 10 marchas</td></tr>
+    <tr><th>Tração</th><td>Traseira</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>2</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 326.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

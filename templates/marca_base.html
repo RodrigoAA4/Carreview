@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="pt-br" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ brand.nome }} • CarReview</title>
+
+  <!-- Fonte -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS principal -->
+  <link
+    rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}"
+  />
+
+  <!-- libs -->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='chat.js') }}"></script>
+</head>
+
+<body>
+  <!-- ========== HEADER / NAV SUPERIOR ========== -->
+  <header class="app-header">
+    <div class="header-left">
+      <div class="brand-block">
+        <div class="logo-row">
+          <span class="logo-icon">🚗</span>
+          <h1 class="logo-text">CarReview</h1>
+        </div>
+        <p class="logo-sub">
+          Avaliações reais · Chat em tempo real · Comunidade automotiva
+        </p>
+      </div>
+    </div>
+
+    <div class="header-right">
+      <div class="user-info-block">
+        <div class="user-meta">
+          <span id="user-info" class="user-name">Visitante</span>
+          <small class="user-role">Convidado</small>
+        </div>
+        <div class="user-avatar" id="user-avatar">
+          <span>👤</span>
+        </div>
+      </div>
+
+      <button
+        id="theme-toggle"
+        class="icon-button theme-toggle"
+        aria-label="Alternar tema claro/escuro"
+        type="button"
+      >
+        🌙
+      </button>
+
+      <button
+        class="icon-button menu-toggle"
+        onclick="toggleMenu()"
+        aria-label="Abrir menu"
+      >
+        ☰
+      </button>
+
+      <div id="menu" class="dropdown-menu">
+        <button id="login-button" class="dropdown-action">
+          Entrar com Google
+        </button>
+        <button
+          id="logout-button"
+          class="dropdown-action danger"
+          style="display:none;"
+        >
+          Sair
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== CONTEÚDO PRINCIPAL ========== -->
+  <main class="page-wrapper">
+    <!-- link voltar -->
+    <a href="/" class="back-home-link">⬅ Voltar para Marcas</a>
+
+    <!-- card resumo da marca -->
+    <section class="brand-hero-card">
+      <div class="brand-hero-left">
+        <div class="brand-hero-title-row">
+          <h2 class="brand-hero-name">{{ brand.nome }}</h2>
+          <span class="brand-hero-badge">{{ brand.badge }}</span>
+        </div>
+
+        <div class="brand-hero-meta">
+          <span class="brand-hero-country">{{ brand.pais }}</span>
+          <span class="brand-hero-sep">•</span>
+          <span class="brand-hero-tagline">{{ brand.tagline }}</span>
+        </div>
+      </div>
+
+      <div class="brand-hero-right">
+        <div class="brand-hero-rating">
+          <span class="brand-hero-stars" id="brand-avg">
+            {{ '%.1f'|format(brand.media_comunidade or 0) }}★
+          </span>
+          <small id="brand-count">
+            {{ brand.qtd_avaliacoes or 0 }} avaliações
+          </small>
+        </div>
+      </div>
+    </section>
+
+    <!-- lista/grid de modelos -->
+    <section class="model-section">
+      <h3 class="model-section-title">Modelos disponíveis</h3>
+
+      <div class="model-grid">
+        {% for m in brand.modelos %}
+        <div class="model-card">
+          <!-- topo visual com imagem e badge de nota -->
+          <div class="model-card-top">
+
+            <div class="model-card-img-wrapper">
+              <img
+                class="model-card-img"
+                data-folder="{{ brand.folder }}"
+                data-model="{{ m.nome }}"
+                alt="{{ m.nome }}"
+              />
+              <div class="model-card-img-overlay">{{ m.nome }}</div>
+            </div>
+
+            <div class="model-card-name-row">
+              <span class="model-card-name">{{ m.nome }}</span>
+              <span class="model-card-badge">{{ '%.1f'|format(m.nota) }}★</span>
+            </div>
+
+            <p class="model-card-desc">{{ m.descricao }}</p>
+          </div>
+
+          <!-- avaliação interativa -->
+          <div class="rating-row" data-model="{{ m.nome }}">
+            <span class="rating-label">Sua nota:</span>
+            <div class="rating-stars">
+              <span class="star" data-value="1">★</span>
+              <span class="star" data-value="2">★</span>
+              <span class="star" data-value="3">★</span>
+              <span class="star" data-value="4">★</span>
+              <span class="star" data-value="5">★</span>
+            </div>
+            <span class="rating-result">–</span>
+          </div>
+
+          <!-- botões -->
+          <div class="model-card-bottom">
+            <button
+              class="model-action-btn ver-avaliacoes-btn"
+              data-brand="{{ brand.folder }}"
+              data-model="{{ m.nome }}"
+            >
+              Ver avaliações
+            </button>
+
+            <button
+              class="model-action-btn alt enviar-avaliacao-btn"
+              data-brand="{{ brand.folder }}"
+              data-model="{{ m.nome }}"
+            >
+              Enviar avaliação ⭐
+            </button>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== CHAT FLUTUANTE ========== -->
+  <button
+    id="chat-fab"
+    class="chat-fab"
+    onclick="toggleChat()"
+    aria-label="Abrir chat"
+  >
+    💬
+    <span class="chat-fab-badge">beta</span>
+  </button>
+
+  <div id="chat-box" class="chat-box" style="display:none;">
+    <div id="chat-header" class="chat-header">
+      <div class="chat-header-left">
+        <strong>Chat da Comunidade</strong>
+        <span class="chat-room-hint">Escolha a marca &gt; modelo &gt; conversar</span>
+      </div>
+
+      <button
+        class="chat-close-btn"
+        onclick="toggleChat()"
+        aria-label="Fechar chat"
+      >
+        ✖
+      </button>
+    </div>
+
+    <div id="chat-content" class="chat-content">
+      <div id="chat-marcas" class="chat-marcas"></div>
+    <div id="chat-modelos" class="chat-modelos" style="display:none;">
+  <div id="modelos-lista"></div>
+</div>
+
+
+    </div>
+
+    <div id="chat-input-area" class="chat-input-area">
+      <input id="chat-input" type="text" placeholder="Escreva sua mensagem..." />
+      <button id="send-btn">Enviar</button>
+    </div>
+  </div>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="app-footer">
+    <div class="footer-inner">
+      <div>CarReview • Projeto acadêmico • v2.0</div>
+      <div class="footer-right">
+        <span>🔥 Em desenvolvimento</span>
+        <span>•</span>
+        <span>by nossa equipe</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========== SCRIPT ========== -->
+  <script>
+    // ===== MENU (login/logout dropdown) =====
+    function toggleMenu() {
+      const menu = document.getElementById("menu");
+      menu.classList.toggle("open");
+    }
+    document.addEventListener("click", (e) => {
+      const menu = document.getElementById("menu");
+      const toggleBtn = e.target.closest(".menu-toggle");
+      const insideMenu = e.target.closest("#menu");
+      if (!toggleBtn && !insideMenu) {
+        menu.classList.remove("open");
+      }
+    });
+
+    // ===== THEME MODE (light/dark) =====
+    const rootEl = document.documentElement;
+    const themeBtn = document.getElementById("theme-toggle");
+
+    function applyTheme(theme) {
+      rootEl.setAttribute("data-theme", theme);
+      if (themeBtn) {
+        themeBtn.textContent = theme === "dark" ? "☀️" : "🌙";
+      }
+    }
+
+    function loadTheme() {
+      const saved = localStorage.getItem("theme") || "light";
+      applyTheme(saved);
+    }
+
+    function toggleTheme() {
+      const current = rootEl.getAttribute("data-theme");
+      const next = current === "dark" ? "light" : "dark";
+      localStorage.setItem("theme", next);
+      applyTheme(next);
+    }
+
+    loadTheme();
+    themeBtn.addEventListener("click", toggleTheme);
+
+
+    // ===== RATING (estrelinhas clicáveis) =====
+    document.querySelectorAll(".rating-row").forEach(row => {
+      const stars = row.querySelectorAll(".star");
+      const resultSpan = row.querySelector(".rating-result");
+
+      stars.forEach(star => {
+        star.addEventListener("click", () => {
+          const value = parseInt(star.getAttribute("data-value"));
+
+          // pinta até a estrela clicada
+          stars.forEach(s => {
+            const v = parseInt(s.getAttribute("data-value"));
+            if (v <= value) {
+              s.classList.add("active");
+            } else {
+              s.classList.remove("active");
+            }
+          });
+
+          // mostra a nota escolhida
+          resultSpan.textContent = value + "/5";
+        });
+      });
+    });
+
+    // ===== BOTÃO "VER AVALIAÇÕES" =====
+    document.querySelectorAll(".ver-avaliacoes-btn").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const brand = btn.dataset.brand;
+        const model = btn.dataset.model;
+
+        try {
+          const resp = await fetch(
+            `/api/review?brand=${encodeURIComponent(brand)}&model=${encodeURIComponent(model)}`
+          );
+          const data = await resp.json();
+
+          if (!data.success) {
+            Swal.fire("Ops...", data.error || "Erro ao buscar avaliações.", "error");
+            return;
+          }
+
+          if (!data.count) {
+            Swal.fire(
+              "Sem avaliações ainda",
+              "Ainda não há avaliações para este modelo.",
+              "info"
+            );
+            return;
+          }
+
+          const itens = data.reviews.map(r => {
+            const estrelas = "⭐".repeat(r.rating);
+            const dt = r.ts ? new Date(r.ts * 1000) : null;
+            const dataStr = dt ? dt.toLocaleDateString("pt-BR") : "";
+            return `<li>${estrelas} <small style="opacity:.7;">${dataStr}</small></li>`;
+          }).join("");
+
+          Swal.fire({
+            title: `${model} • ${data.avg.toFixed(1)}/5 (${data.count} avaliações)`,
+            html: `
+              <div style="text-align:left; max-height:260px; overflow-y:auto;">
+                <ul style="padding-left:1.2rem; margin:0;">
+                  ${itens}
+                </ul>
+              </div>
+            `,
+            icon: "info"
+          });
+
+        } catch (err) {
+          console.error(err);
+          Swal.fire(
+            "Erro",
+            "Não foi possível carregar as avaliações agora.",
+            "error"
+          );
+        }
+      });
+    });
+
+    // ===== BOTÃO "ENVIAR AVALIAÇÃO" =====
+    document.querySelectorAll(".enviar-avaliacao-btn").forEach(btn => {
+      btn.addEventListener("click", async () => {
+        const brand = btn.dataset.brand;
+        const model = btn.dataset.model;
+
+        const card = btn.closest(".model-card");
+        if (!card) {
+          Swal.fire("Erro", "Não foi possível identificar o modelo.", "error");
+          return;
+        }
+
+        const ratingRow = card.querySelector(".rating-row");
+        if (!ratingRow) {
+          Swal.fire("Erro", "Não foi possível encontrar as estrelas.", "error");
+          return;
+        }
+
+        const activeStars = ratingRow.querySelectorAll(".star.active");
+        const rating = activeStars.length;
+
+        if (!rating) {
+          Swal.fire(
+            "Escolha uma nota",
+            "Clique em alguma estrela antes de enviar a avaliação.",
+            "warning"
+          );
+          return;
+        }
+
+        try {
+          const resp = await fetch("/api/review", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({
+              brand: brand,
+              model: model,
+              rating: rating
+            })
+          });
+
+          const data = await resp.json();
+
+          if (!data.success) {
+            Swal.fire("Erro", data.error || "Não foi possível salvar sua avaliação.", "error");
+            return;
+          }
+
+          const resultSpan = ratingRow.querySelector(".rating-result");
+          if (resultSpan) {
+            resultSpan.textContent = `${rating}/5`;
+          }
+
+          Swal.fire(
+            "Avaliação enviada! ✅",
+            `Obrigado! Média atual de ${model}: ${data.avg.toFixed(1)}/5 (${data.count} avaliações).`,
+            "success"
+          );
+
+          // atualiza topo da marca (se o backend estiver retornando brand_avg/brand_count)
+          const brandAvgEl = document.getElementById("brand-avg");
+          const brandCountEl = document.getElementById("brand-count");
+
+          if (brandAvgEl && typeof data.brand_avg !== "undefined") {
+            brandAvgEl.textContent = data.brand_avg.toFixed(1) + "★";
+          }
+          if (brandCountEl && typeof data.brand_count !== "undefined") {
+            brandCountEl.textContent = `${data.brand_count} avaliações`;
+          }
+
+          // atualiza badge vermelho do modelo
+          const badge = card.querySelector(".model-card-badge");
+          if (badge) {
+            badge.textContent = data.avg.toFixed(1) + "★";
+          }
+
+        } catch (err) {
+          console.error(err);
+          Swal.fire(
+            "Erro",
+            "Não foi possível enviar sua avaliação agora.",
+            "error"
+          );
+        }
+      });
+    });
+
+    // ===== CARREGAR IMAGENS DOS CARROS =====
+    (function loadCarImages() {
+      const baseStaticPath = "{{ url_for('static', filename='images') }}";
+
+      document.querySelectorAll(".model-card-img").forEach(imgEl => {
+        const folder = imgEl.getAttribute("data-folder");
+        const rawModel = imgEl.getAttribute("data-model");
+
+        const modelSlug = rawModel
+          .toLowerCase()
+          .replace(/ /g, "_")
+          .replace(/-/g, "_");
+
+        const brandPrefix = folder.toLowerCase();
+
+        const baseName1 = modelSlug;
+        const baseName2 = brandPrefix + "_" + modelSlug;
+
+        const exts = ["png", "jpg", "jpeg", "webp"];
+
+        const candidates = [];
+        exts.forEach(ext => {
+          candidates.push(`${baseStaticPath}/${folder}/${baseName1}.${ext}`);
+          candidates.push(`${baseStaticPath}/${folder}/${baseName2}.${ext}`);
+        });
+
+        let idx = 0;
+        function tryNext() {
+          if (idx >= candidates.length) {
+            imgEl.classList.add("img-fallback");
+            imgEl.alt = rawModel + " (imagem não encontrada)";
+            return;
+          }
+
+          const url = candidates[idx];
+          idx += 1;
+
+          const tester = new Image();
+          tester.onload = () => {
+            imgEl.src = url;
+          };
+          tester.onerror = () => {
+            tryNext();
+          };
+          tester.src = url;
+        }
+
+        tryNext();
+      });
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BMW - Todos os modelos</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+  <div class="header">
+    <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+      <h1>CAR REVIEW</h1>
+    </div>
+  </div>
+
+  <!-- BMW 320i -->
+  <div class="car-card">
+    <img src="/static/images/bmw/bmw_320i_2015.jpg" alt="BMW 320i 2015" class="car-img">
+
+    <div class="rating-container" data-modelo="bmw_320i">
+      <div class="rating-stars">
+        <span class="rating" data-value="1">★</span>
+        <span class="rating" data-value="2">★</span>
+        <span class="rating" data-value="3">★</span>
+        <span class="rating" data-value="4">★</span>
+        <span class="rating" data-value="5">★</span>
+      </div>
+      <div class="user-rating-info">
+        <span class="media-estrela">Média: 0.0</span>
+        <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+      </div>
+    </div>
+
+    <h2 class="car-title">BMW 320i 2.0 ActiveFlex 2015</h2>
+    <p class="car-description">
+      O BMW 320i 2015 2.0 ActiveFlex é um sedã premium da sexta geração da Série 3 (F30),
+      reconhecido por equilibrar desempenho esportivo, conforto e eficiência.
+    </p>
+    <table class="car-table">
+      <tr><th>Ano</th><td>2015</td></tr>
+      <tr><th>Cor</th><td>Azul</td></tr>
+      <tr><th>Motor</th><td>2.0L TwinPower Turbo Flex de 4 cilindros (código B48)</td></tr>
+      <tr><th>Potência</th><td>184 cv @ 5.000 rpm (etanol ou gasolina)</td></tr>
+      <tr><th>Torque</th><td>27,5 kgfm entre 1.250 e 4.500 rpm</td></tr>
+      <tr><th>Transmissão</th><td>Automática de 8 marchas (ZF 8HP), com paddle shifts</td></tr>
+      <tr><th>Tração</th><td>Traseira (RWD)</td></tr>
+      <tr><th>Aceleração (0–100 km/h)</th><td>7,3 segundos</td></tr>
+      <tr><th>Velocidade máxima</th><td>235 km/h</td></tr>
+      <tr><th>Combustível</th><td>Flex</td></tr>
+      <tr><th>Portas</th><td>4</td></tr>
+      <tr><th>Preço estimado</th><td>R$ 115.187 (FIPE Abril/2025)</td></tr>
+    </table>
+  </div>
+
+  <!-- BMW X1 -->
+  <div class="car-card">
+    <img src="/static/images/bmw/bmw_x1_2023.jpg" alt="BMW X1 2023" class="car-img">
+
+    <div class="rating-container" data-modelo="bmw_x1">
+      <div class="rating-stars">
+        <span class="rating" data-value="1">★</span>
+        <span class="rating" data-value="2">★</span>
+        <span class="rating" data-value="3">★</span>
+        <span class="rating" data-value="4">★</span>
+        <span class="rating" data-value="5">★</span>
+      </div>
+      <div class="user-rating-info">
+        <span class="media-estrela">Média: 0.0</span>
+        <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+      </div>
+    </div>
+
+    <h2 class="car-title">BMW X1 sDrive20i GP 2.0 2023</h2>
+    <p class="car-description">
+      O BMW X1 2023 é um SUV premium compacto que combina espaço interno generoso, tecnologia e eficiência.
+    </p>
+    <table class="car-table">
+      <tr><th>Ano</th><td>2023</td></tr>
+      <tr><th>Cor</th><td>Branco Alpine</td></tr>
+      <tr><th>Motor</th><td>2.0 TwinPower Turbo, 4 cilindros</td></tr>
+      <tr><th>Potência</th><td>192 cv</td></tr>
+      <tr><th>Torque</th><td>28,6 kgfm</td></tr>
+      <tr><th>Transmissão</th><td>Automática de 8 marchas</td></tr>
+      <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+      <tr><th>Aceleração (0–100 km/h)</th><td>7,7 segundos</td></tr>
+      <tr><th>Velocidade máxima</th><td>225 km/h</td></tr>
+      <tr><th>Combustível</th><td>Gasolina</td></tr>
+      <tr><th>Portas</th><td>4</td></tr>
+      <tr><th>Preço estimado</th><td>R$ 273.950 (base tabela FIPE)</td></tr>
+    </table>
+  </div>
+
+  <!-- BMW X6 -->
+  <div class="car-card">
+    <img src="/static/images/bmw/bmw_x6_2022.jpg" alt="BMW X6 2022" class="car-img">
+
+    <div class="rating-container" data-modelo="bmw_x6">
+      <div class="rating-stars">
+        <span class="rating" data-value="1">★</span>
+        <span class="rating" data-value="2">★</span>
+        <span class="rating" data-value="3">★</span>
+        <span class="rating" data-value="4">★</span>
+        <span class="rating" data-value="5">★</span>
+      </div>
+      <div class="user-rating-info">
+        <span class="media-estrela">Média: 0.0</span>
+        <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+      </div>
+    </div>
+
+    <h2 class="car-title">BMW X6 xDrive40i M Sport 3.0 2022</h2>
+    <p class="car-description">
+      O BMW X6 2022 é um SUV coupé de alto luxo que impressiona pelo visual imponente e desempenho refinado.
+    </p>
+    <table class="car-table">
+      <tr><th>Ano</th><td>2022</td></tr>
+      <tr><th>Cor</th><td>Preto Safira</td></tr>
+      <tr><th>Motor</th><td>3.0 TwinPower Turbo, 6 cilindros</td></tr>
+      <tr><th>Potência</th><td>340 cv</td></tr>
+      <tr><th>Torque</th><td>45,9 kgfm</td></tr>
+      <tr><th>Transmissão</th><td>Automática de 8 marchas</td></tr>
+      <tr><th>Tração</th><td>Integral (xDrive)</td></tr>
+      <tr><th>Aceleração (0–100 km/h)</th><td>5,5 segundos</td></tr>
+      <tr><th>Velocidade máxima</th><td>250 km/h</td></tr>
+      <tr><th>Combustível</th><td>Gasolina</td></tr>
+      <tr><th>Portas</th><td>4</td></tr>
+      <tr><th>Preço estimado</th><td>R$ 575.000 (base tabela FIPE)</td></tr>
+    </table>
+  </div>
+
+</body>
+</html>

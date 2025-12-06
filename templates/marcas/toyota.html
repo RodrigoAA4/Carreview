@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toyota Corolla, Corolla Cross e Hilux</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Toyota Corolla -->
+<div class="car-card">
+  <img src="/static/images/toyota/toyota_corolla_2024.jpg" alt="Toyota Corolla 2024" class="car-img">
+
+  <div class="rating-container" data-modelo="toyota_corolla">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Toyota Corolla Altis Premium 2.0 Flex 2024</h2>
+  <p class="car-description">O Toyota Corolla Altis Premium 2024 reforça sua liderança entre os sedãs médios...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2024</td></tr>
+    <tr><th>Cor</th><td>Prata Lunar</td></tr>
+    <tr><th>Motor</th><td>2.0 Flex, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>177 cv (etanol) / 169 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>21,4 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática CVT</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 172.890 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Toyota Corolla Cross -->
+<div class="car-card">
+  <img src="/static/images/toyota/toyota_corolla_cross_2023.jpg" alt="Toyota Corolla Cross 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="toyota_corolla_cross">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Toyota Corolla Cross XRE 2.0 Flex 2023</h2>
+  <p class="car-description">O Toyota Corolla Cross XRE 2023 é um SUV médio que une espaço interno, desempenho...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Branco Supernova</td></tr>
+    <tr><th>Motor</th><td>2.0 Flex, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>177 cv (etanol) / 169 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>21,4 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática CVT</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 167.290 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Toyota Hilux -->
+<div class="car-card">
+  <img src="/static/images/toyota/toyota_hilux_2023.png" alt="Toyota Hilux 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="toyota_hilux">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Toyota Hilux SRX Plus 2.8 Diesel 4x4 AT 2023</h2>
+  <p class="car-description">A Toyota Hilux SRX Plus 2023 é uma picape média sinônimo de robustez e confiabilidade...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Prata</td></tr>
+    <tr><th>Motor</th><td>2.8 Turbo Diesel, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>204 cv</td></tr>
+    <tr><th>Torque</th><td>50,9 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>4x4</td></tr>
+    <tr><th>Combustível</th><td>Diesel</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 319.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

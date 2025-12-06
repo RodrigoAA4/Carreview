@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fiat Argo, Cronos e Toro</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Fiat Argo -->
+<div class="car-card">
+  <img src="/static/images/fiat/fiat_argo_2024.jpg" alt="Fiat Argo 2024" class="car-img">
+
+  <div class="rating-container" data-modelo="fiat_argo">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Fiat Argo 1.0 2024</h2>
+  <p class="car-description">
+    O Fiat Argo 1.0 2024 é um hatch compacto que oferece bom espaço interno, economia de combustível e custo acessível...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2024</td></tr>
+    <tr><th>Cor</th><td>Vermelho Banchisa</td></tr>
+    <tr><th>Motor</th><td>1.0 Firefly, 3 cilindros</td></tr>
+    <tr><th>Potência</th><td>77 cv (etanol) / 72 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>10,9 kgfm (etanol) / 10,4 kgfm (gasolina)</td></tr>
+    <tr><th>Transmissão</th><td>Manual de 5 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 77.790 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Fiat Cronos -->
+<div class="car-card">
+  <img src="/static/images/fiat/fiat_cronos_2024.jpg" alt="Fiat Cronos 2024" class="car-img">
+
+  <div class="rating-container" data-modelo="fiat_cronos">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Fiat Cronos Drive 1.3 2024</h2>
+  <p class="car-description">
+    O Fiat Cronos Drive 1.3 2024 é um sedã compacto que une bom espaço interno, porta-malas generoso e motor 1.3 Firefly flex de 107 cv...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2024</td></tr>
+    <tr><th>Cor</th><td>Branco Bari</td></tr>
+    <tr><th>Motor</th><td>1.3 Firefly, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>107 cv (etanol) / 98 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>13,7 kgfm (etanol) / 13,2 kgfm (gasolina)</td></tr>
+    <tr><th>Transmissão</th><td>Automática CVT ou Manual de 5 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 95.990 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Fiat Toro -->
+<div class="car-card">
+  <img src="/static/images/fiat/fiat_toro_2023.jpg" alt="Fiat Toro 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="fiat_toro">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Fiat Toro Volcano 2.0 Diesel 4x4 AT9 2023</h2>
+  <p class="car-description">
+    A Fiat Toro Volcano 2023 é uma picape intermediária que combina robustez, conforto e tecnologia...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Vermelho Tribal</td></tr>
+    <tr><th>Motor</th><td>2.0 Turbo Diesel, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>170 cv</td></tr>
+    <tr><th>Torque</th><td>35,7 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 9 marchas</td></tr>
+    <tr><th>Tração</th><td>4x4</td></tr>
+    <tr><th>Combustível</th><td>Diesel</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 180.990 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

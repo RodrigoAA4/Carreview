@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Land Rover Evoque, Discovery Sport e Defender</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Land Rover Evoque -->
+<div class="car-card">
+  <img src="/static/images/land rover/landrover_evoque_2020.jpg" alt="Land Rover Evoque 2020" class="car-img">
+
+  <div class="rating-container" data-modelo="land_rover_evoque">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Land Rover Range Rover Evoque SE P250 2020</h2>
+  <p class="car-description">
+    O Range Rover Evoque 2020 combina luxo, tecnologia e desempenho...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2020</td></tr>
+    <tr><th>Cor</th><td>Branco Fuji</td></tr>
+    <tr><th>Motor</th><td>2.0 Turbo Ingenium</td></tr>
+    <tr><th>Potência</th><td>250 cv</td></tr>
+    <tr><th>Torque</th><td>37,2 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 9 marchas</td></tr>
+    <tr><th>Tração</th><td>Integral (AWD)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 322.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Land Rover Discovery Sport -->
+<div class="car-card">
+  <img src="/static/images/land rover/landrover_discoverysport_2021.jpg" alt="Land Rover Discovery Sport 2021" class="car-img">
+
+  <div class="rating-container" data-modelo="land_rover_discovery_sport">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Land Rover Discovery Sport R-Dynamic SE 2.0 Turbo 2021</h2>
+  <p class="car-description">
+    O Land Rover Discovery Sport 2021 é um SUV médio que oferece ótimo espaço interno...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2021</td></tr>
+    <tr><th>Cor</th><td>Cinza Santorini</td></tr>
+    <tr><th>Motor</th><td>2.0 Turbo Ingenium</td></tr>
+    <tr><th>Potência</th><td>249 cv</td></tr>
+    <tr><th>Torque</th><td>37,2 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 9 marchas</td></tr>
+    <tr><th>Tração</th><td>Integral (AWD)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 329.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Land Rover Defender -->
+<div class="car-card">
+  <img src="/static/images/land rover/landrover_defender_2023.jpg" alt="Land Rover Defender 2023" class="car-img">
+
+  <div class="rating-container" data-modelo="land_rover_defender">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Land Rover Defender 110 X-Dynamic SE 3.0 Diesel 2023</h2>
+  <p class="car-description">
+    O Land Rover Defender 110 2023 é um dos utilitários mais icônicos do mundo...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2023</td></tr>
+    <tr><th>Cor</th><td>Cinza Santorini</td></tr>
+    <tr><th>Motor</th><td>3.0 Turbo Diesel híbrido-leve (MHEV)</td></tr>
+    <tr><th>Potência</th><td>300 cv</td></tr>
+    <tr><th>Torque</th><td>66 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 8 marchas</td></tr>
+    <tr><th>Tração</th><td>Integral (AWD)</td></tr>
+    <tr><th>Combustível</th><td>Diesel</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 654.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

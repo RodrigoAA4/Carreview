@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Volkswagen Polo, T-Cross e Amarok</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Volkswagen Polo -->
+<div class="car-card">
+  <img src="/static/images/volkswagen/volkswagen_polo_2024.jpg" alt="Volkswagen Polo 2024" class="car-img">
+
+  <div class="rating-container" data-modelo="volkswagen_polo">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Volkswagen Polo Highline 1.0 TSI 2024</h2>
+  <p class="car-description">O Volkswagen Polo Highline 2024 é um hatch compacto premium, com motor 1.0 TSI...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2024</td></tr>
+    <tr><th>Cor</th><td>Prata Sirius</td></tr>
+    <tr><th>Motor</th><td>1.0 TSI Turbo Flex, 3 cilindros</td></tr>
+    <tr><th>Potência</th><td>116 cv (etanol) / 109 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>16,8 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 118.290 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Volkswagen T-Cross -->
+<div class="car-card">
+  <img src="/static/images/volkswagen/volkswagen_tcross_2024.jpg" alt="Volkswagen T-Cross 2024" class="car-img">
+
+  <div class="rating-container" data-modelo="volkswagen_tcross">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Volkswagen T-Cross Highline 250 TSI 2024</h2>
+  <p class="car-description">O Volkswagen T-Cross Highline 2024 é um SUV compacto equipado com motor 1.4 TSI...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2024</td></tr>
+    <tr><th>Cor</th><td>Branco Puro</td></tr>
+    <tr><th>Motor</th><td>1.4 TSI Turbo Flex, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>150 cv (etanol) / 150 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>25,5 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 161.690 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Volkswagen Amarok -->
+<div class="car-card">
+  <img src="/static/images/volkswagen/volkswagen_amarok_2022.jpg" alt="Volkswagen Amarok 2022" class="car-img">
+
+  <div class="rating-container" data-modelo="volkswagen_amarok">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Volkswagen Amarok Highline 3.0 V6 Diesel 4x4 AT8 2022</h2>
+  <p class="car-description">A Volkswagen Amarok Highline 2022 é uma picape média potente e refinada...</p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2022</td></tr>
+    <tr><th>Cor</th><td>Branco Mystic</td></tr>
+    <tr><th>Motor</th><td>3.0 V6 Turbo Diesel</td></tr>
+    <tr><th>Potência</th><td>258 cv</td></tr>
+    <tr><th>Torque</th><td>59,1 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 8 marchas</td></tr>
+    <tr><th>Tração</th><td>4x4</td></tr>
+    <tr><th>Combustível</th><td>Diesel</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 290.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hyundai HB20S, Creta e Tucson</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script type="module" src="{{ url_for('static', filename='auth.js') }}"></script>
+  <script type="module" src="{{ url_for('static', filename='rating.js') }}"></script>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo" onclick="location.href='/'" style="cursor: pointer;">
+    <h1>CAR REVIEW</h1>
+  </div>
+</div>
+
+<!-- Hyundai HB20S -->
+<div class="car-card">
+  <img src="/static/images/hyundai/hyundai_hb20_2024.jpg" alt="Hyundai HB20S 2024" class="car-img">
+
+  <div class="rating-container" data-modelo="hyundai_hb20s">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Hyundai HB20S 1.0 TGDI Platinum 2024</h2>
+  <p class="car-description">
+    O Hyundai HB20S 2024 é um sedã compacto moderno e eficiente, com motor 1.0 turbo...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2024</td></tr>
+    <tr><th>Cor</th><td>Prata Brisk</td></tr>
+    <tr><th>Motor</th><td>1.0 TGDI Turbo Flex, 3 cilindros</td></tr>
+    <tr><th>Potência</th><td>120 cv (etanol e gasolina)</td></tr>
+    <tr><th>Torque</th><td>17,5 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 112.990 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Hyundai Creta -->
+<div class="car-card">
+  <img src="/static/images/hyundai/hyundai_creta_2025.jpg" alt="Hyundai Creta 2025" class="car-img">
+
+  <div class="rating-container" data-modelo="hyundai_creta">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Hyundai Creta 2.0 Ultimate 2025</h2>
+  <p class="car-description">
+    O Hyundai Creta Ultimate 2.0 2025 é um SUV médio que combina conforto, tecnologia e desempenho...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2025</td></tr>
+    <tr><th>Cor</th><td>Azul Sapphire</td></tr>
+    <tr><th>Motor</th><td>2.0 Flex, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>167 cv (etanol) / 157 cv (gasolina)</td></tr>
+    <tr><th>Torque</th><td>20,6 kgfm (etanol) / 19,2 kgfm (gasolina)</td></tr>
+    <tr><th>Transmissão</th><td>Automática de 6 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Flex</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 178.990 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+<!-- Hyundai New Tucson -->
+<div class="car-card">
+  <img src="/static/images/hyundai/hyundai_tucson_2021.jpg" alt="Hyundai Tucson 2021" class="car-img">
+
+  <div class="rating-container" data-modelo="hyundai_tucson">
+    <div class="rating-stars">
+      <span class="rating" data-value="1">★</span>
+      <span class="rating" data-value="2">★</span>
+      <span class="rating" data-value="3">★</span>
+      <span class="rating" data-value="4">★</span>
+      <span class="rating" data-value="5">★</span>
+    </div>
+    <div class="user-rating-info">
+      <span class="media-estrela">Média: 0.0</span>
+      <span class="sua-estrela" style="display:none;">| Sua nota: 0</span>
+    </div>
+  </div>
+
+  <h2 class="car-title">Hyundai New Tucson GLS 1.6 Turbo GDI 2021</h2>
+  <p class="car-description">
+    O Hyundai New Tucson GLS 2021 oferece espaço, conforto e bom desempenho...
+  </p>
+  <table class="car-table">
+    <tr><th>Ano</th><td>2021</td></tr>
+    <tr><th>Cor</th><td>Branco Polar</td></tr>
+    <tr><th>Motor</th><td>1.6 Turbo GDI, 4 cilindros</td></tr>
+    <tr><th>Potência</th><td>177 cv</td></tr>
+    <tr><th>Torque</th><td>27 kgfm</td></tr>
+    <tr><th>Transmissão</th><td>Automatizada DCT de 7 marchas</td></tr>
+    <tr><th>Tração</th><td>Dianteira (FWD)</td></tr>
+    <tr><th>Combustível</th><td>Gasolina</td></tr>
+    <tr><th>Portas</th><td>4</td></tr>
+    <tr><th>Preço estimado</th><td>R$ 150.000 (base tabela FIPE)</td></tr>
+  </table>
+</div>
+
+</body>
+</html>
