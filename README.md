@@ -61,7 +61,7 @@ CarReview/
 
 1. **Clone este repositório:**
 ```bash
-git clone https://github.com/fabiolcalabrez/CarReview.git
+git clone https://github.com/RodrigoAA4/Carreview.git
 ```
 
 2. **Abra o projeto em seu editor** e inicie o backend com Flask:
